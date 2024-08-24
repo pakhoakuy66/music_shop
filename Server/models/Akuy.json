@@ -1,0 +1,44 @@
+{
+    "ukuleles": [
+        {
+            "name": "Ukulele Model A",
+            "price": 100,
+            "brand": "Brand A",
+            "description": "A great ukulele for beginners."
+        },
+        {
+            "name": "Ukulele Model B",
+            "price": 150,
+            "brand": "Brand B",
+            "description": "High-quality ukulele with rich sound."
+        }
+    ],
+    "guitars": [
+        {
+            "name": "Guitar Model A",
+            "price": 200,
+            "brand": "Brand A",
+            "description": "Acoustic guitar with a warm tone."
+        },
+        {
+            "name": "Guitar Model B",
+            "price": 300,
+            "brand": "Brand B",
+            "description": "Electric guitar perfect for rock music."
+        }
+    ],
+    "kalimbas": [
+        {
+            "name": "Kalimba Model A",
+            "price": 50,
+            "brand": "Brand A",
+            "description": "Portable and easy to play kalimba."
+        },
+        {
+            "name": "Kalimba Model B",
+            "price": 80,
+            "brand": "Brand B",
+            "description": "Premium kalimba with a crisp sound."
+        }
+    ]
+}
