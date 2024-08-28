@@ -11,7 +11,7 @@
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         />
     </head>
-    <body class="font-mono bg-slate-900">
+    <body class="font-mono bg-[#0D0D0D]">
         <header class="h-20 p-2.5 bg-[#1C1C1C] flex items-center">
             <a href="../pages/home.html" class="ml-5"
                 ><img
@@ -45,17 +45,29 @@
                 </ul>
             </nav>
         </header>
-        <main class="">
+        <main class="flex">
             <section class="h-[600px] pt-20 pl-20">
-                <div class="w-[500px] overflow-hidden">
+                <div class="w-[500px] overflow-hidden relative rounded-2xl">
                     <div class="flex duration-1000 translate-x-0 list_item">
                         <img src="../public/IMG/guitar5.webp" class="" />
                         <img src="../public/IMG/uk.jpg" class="" />
                         <img src="../public/IMG/guitar1.jpg" class="" />
                     </div>
+                    <div class="btns">
+                        <div
+                            class="text-[25px] text-[#999] absolute top-[40%] translate-y-[50%] left-2 cursor-pointer duration-200 hover:text-[#fff] hover:text-[27px] btn_left btn"
+                        >
+                            <i class="fa-solid fa-chevron-left"></i>
+                        </div>
+                        <div
+                            class="text-[25px] text-[#999] absolute top-[40%] translate-y-[50%] right-2 cursor-pointer duration-200 hover:text-[#fff] hover:text-[27px] btn_right btn"
+                        >
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </div>
+                    </div>
                 </div>
             </section>
-            <article class="float-right">gưebub</article>
+            <article class="float-right pt-20 pl-32">gưebub</article>
         </main>
 
         <h1 class="font-bold underline p-12"></h1>

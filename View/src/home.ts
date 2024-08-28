@@ -1,21 +1,44 @@
 const list_items = document.querySelector<HTMLElement>(".list_item");
-const imgs = document.getElementsByTagName("img");
+const imgs = list_items?.getElementsByTagName("img");
+const btnLeft = document.querySelector(".btn_left");
+const btnRight = document.querySelector(".btn_right");
 let current = 0;
 
-if (list_items && imgs.length > 0) {
-    setInterval(() => {
-        if (current == length - 1) {
+if (list_items && imgs && imgs.length > 0) {
+    const handleChangeSlide = () => {
+        let width = imgs[0].offsetWidth;
+
+        if (current === imgs.length - 1) {
             current = 0;
-            let width = imgs[0].offsetWidth;
-            list_items.style.transform = `translateX(${0}px)`;
+            list_items.style.transform = `translateX(0px)`;
         } else {
             current++;
-            let width = imgs[0].offsetWidth;
-            list_items.style.transform = `translateX(${
-                width * -8.95 * current
-            }px)`;
+            list_items.style.transform = `translateX(-${width * current}px)`;
         }
-    }, 4000);
+    };
+
+    let handleEvent = setInterval(handleChangeSlide, 4000);
+
+    btnRight?.addEventListener("click", () => {
+        clearInterval(handleEvent);
+        handleChangeSlide(); // Gọi hàm để thực hiện thay đổi slide khi nhấn nút
+        handleEvent = setInterval(handleChangeSlide, 4000);
+    });
+
+    btnLeft?.addEventListener("click", () => {
+        clearInterval(handleEvent);
+        let width = imgs[0].offsetWidth;
+
+        if (current === 0) {
+            current = imgs.length - 1;
+        } else {
+            current--;
+        }
+
+        list_items.style.transform = `translateX(-${width * current}px)`;
+
+        handleEvent = setInterval(handleChangeSlide, 4000);
+    });
 } else {
     console.error("Element with class 'list_item' or 'img' tag not found.");
 }
