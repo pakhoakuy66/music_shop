@@ -3,14 +3,15 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Home - My Music Store</title>
+        <title>Akuy Music</title>
+        <link rel="icon" href="../public/IMG/Akuy_logo.png" />
         <link rel="stylesheet" href="../src/style.css" />
         <link
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         />
     </head>
-    <body class="font-mono">
+    <body class="font-mono bg-slate-900">
         <header class="h-20 p-2.5 bg-[#1C1C1C] flex items-center">
             <a href="../pages/home.html" class="ml-5"
                 ><img
@@ -44,42 +45,20 @@
                 </ul>
             </nav>
         </header>
-        <main>
-            <div class="w-full relative overflow-hidden">
-                <div
-                    class="absolute inset-0 flex transition-transform duration-500 ease-in-out"
-                    id="slideshow"
-                >
-                    <div class="min-w-full h-screen">
-                        <img
-                            src="../public/IMG/guitar5.webp"
-                            class="w-full h-full object-cover"
-                        />
-                    </div>
-                    <div class="min-w-full h-screen">
-                        <img
-                            src="../public/IMG/ukulele1.webp"
-                            class="w-full h-full object-cover"
-                        />
-                    </div>
-                    <div class="min-w-full h-screen">
-                        <img
-                            src="../public/IMG/guitar1.jpg"
-                            class="w-full h-full object-cover"
-                        />
+        <main class="">
+            <section class="h-[600px] pt-20 pl-20">
+                <div class="w-[500px] overflow-hidden">
+                    <div class="flex duration-1000 translate-x-0 list_item">
+                        <img src="../public/IMG/guitar5.webp" class="" />
+                        <img src="../public/IMG/uk.jpg" class="" />
+                        <img src="../public/IMG/guitar1.jpg" class="" />
                     </div>
                 </div>
-            </div>
-            <div class="absolute inset-x-0 bottom-0 flex justify-between p-4">
-                <button id="prevSlide" class="text-white text-4xl">
-                    <i class="fa-solid fa-chevron-left"></i>
-                </button>
-                <button id="nextSlide" class="text-white text-4xl">
-                    <i class="fa-solid fa-chevron-right"></i>
-                </button>
-            </div>
+            </section>
+            <article class="float-right">gưebub</article>
         </main>
 
-        <h1 class="font-bold underline p-12">Welcome to My Music Store</h1>
+        <h1 class="font-bold underline p-12"></h1>
     </body>
+    <script src="../src/home.ts" type="module"></script>
 </html>
