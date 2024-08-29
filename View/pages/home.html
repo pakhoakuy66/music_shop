@@ -10,9 +10,38 @@
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         />
+        <style>
+            /* Sửa lại hiệu ứng typing */
+            #typing {
+                white-space: nowrap;
+                overflow: hidden; /* Đảm bảo phần tử chỉ hiển thị trong width của nó */
+                border-right: 2px solid white; /* Hiệu ứng con trỏ gõ */
+                width: 22ch; /* Chiều rộng cho phép của văn bản */
+                animation: typing 5s steps(22) 1s infinite alternate;
+            }
+            #crow {
+                animation: crow 0.5s linear 0s infinite;
+            }
+            @keyframes typing {
+                from {
+                    width: 0;
+                }
+                to {
+                    width: 22ch;
+                }
+            }
+            @keyframes crow {
+                from {
+                    opacity: 0;
+                }
+                to {
+                    opacity: 1;
+                }
+            }
+        </style>
     </head>
-    <body class="font-mono bg-[#0D0D0D]">
-        <header class="h-20 p-2.5 bg-[#1C1C1C] flex items-center">
+    <body class="font-mono bg-[#1C1C1C]">
+        <header class="h-20 p-2.5 bg-[#0D0D0D] flex items-center">
             <a href="../pages/home.html" class="ml-5"
                 ><img
                     class="h-14 w-14"
@@ -24,29 +53,45 @@
             >
             <div>
                 <ul class="flex ml-[100px] text-[18px] text-[#fff] font-bold">
-                    <li class="mx-7"><a href="">GUITAR</a></li>
-                    <li class="mx-7"><a href="">UKULELE</a></li>
-                    <li class="mx-7"><a href="">KALIMBA</a></li>
+                    <li class="mx-7 duration-200 hover:text-red-400">
+                        <a href="">GUITAR</a>
+                    </li>
+                    <li class="mx-7 duration-200 hover:text-red-400">
+                        <a href="">UKULELE</a>
+                    </li>
+                    <li class="mx-7 duration-200 hover:text-red-400">
+                        <a href="">KALIMBA</a>
+                    </li>
                 </ul>
             </div>
             <nav>
                 <ul class="flex ml-60 text-[#fff]">
                     <li class="mx-5">
                         <a href=""
-                            ><i class="fa-solid fa-magnifying-glass"></i
+                            ><i
+                                class="duration-200 hover:text-red-400 hover:text-[20px] fa-solid fa-magnifying-glass"
+                            ></i
                         ></a>
                     </li>
                     <li class="mx-5">
-                        <a href=""><i class="fa-regular fa-user"></i></a>
+                        <a href=""
+                            ><i
+                                class="duration-200 hover:text-red-400 hover:text-[20px] fa-regular fa-user"
+                            ></i
+                        ></a>
                     </li>
                     <li class="mx-5">
-                        <a href=""><i class="fa-solid fa-cart-shopping"></i></a>
+                        <a href=""
+                            ><i
+                                class="duration-200 hover:text-red-400 hover:text-[20px] fa-solid fa-cart-shopping"
+                            ></i
+                        ></a>
                     </li>
                 </ul>
             </nav>
         </header>
-        <main class="flex">
-            <section class="h-[600px] pt-20 pl-20">
+        <main class="flex border-b border-gray-500">
+            <section class="h-[500px] pt-20 pl-20">
                 <div class="w-[500px] overflow-hidden relative rounded-2xl">
                     <div class="flex duration-1000 translate-x-0 list_item">
                         <img src="../public/IMG/guitar5.webp" class="" />
@@ -67,9 +112,39 @@
                     </div>
                 </div>
             </section>
-            <article class="float-right pt-20 pl-32">gưebub</article>
-        </main>
+            <article class="float-right pt-28 pl-28">
+                <div
+                    id="typing"
+                    class="text-white float-left font-bold text-[45px]"
+                >
+                    Akuy <span>xin chào bạn </span><br />
+                    <span class="text-[20px] text-red-300"
+                        >chúc bạn có một ngày mua sắm vui vẻ</span
+                    >
+                </div>
 
+                <div
+                    id="crow"
+                    class="float-left text-white font-bold text-[45px]"
+                ></div>
+            </article>
+        </main>
+        <nav
+            class="pt-10 text-white justify-center flex font-bold text-red-400"
+        >
+            <h1 class="text-[28px] text-red-400">
+                Mỗi người đều là một nghệ sĩ
+            </h1>
+        </nav>
+        <div class="flex justify-center">
+            <p class="w-[900px] text-[#fff] text-center">
+                Với cam kết luôn mang lại sự mới mẻ, Akuy liên tục mở rộng sang
+                các lĩnh vực mới, đáp ứng nhu cầu không ngừng phát triển của thị
+                trường nhạc cụ. Hãy đồng hành cùng Akuy trên hành trình định
+                nghĩa lại những khái niệm, phát triển khả năng và để lại dấu ấn
+                lâu dài trong thế giới âm nhạc
+            </p>
+        </div>
         <h1 class="font-bold underline p-12"></h1>
     </body>
     <script src="../src/home.ts" type="module"></script>
