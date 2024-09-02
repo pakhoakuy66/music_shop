@@ -12,8 +12,91 @@
         />
     </head>
     <body
-        class="font-mono bg-[#BBB5AC] flex justify-center items-center min-h-screen p-2.5"
+        class="font-mono bg-[#BBB5AC] flex justify-center items-center min-h-screen p-25"
     >
-        <form action="" class="p-2.5 bg-[#130C0E] w-auto h-auto"></form>
+        <div
+            class="bg-[#130C0E] text-[#fff] p-8 rounded-lg shadow-lg max-w-md w-full"
+        >
+            <nav class="flex justify-center">
+                <nav class="flex items-center">
+                    <a href="./home.html"
+                        ><img
+                            class="w-14 h-14"
+                            src="../public/IMG/Akuy_logo.png"
+                            alt=""
+                    /></a>
+                    <a class="text-[32px] ml-3" href="./home.html"
+                        >Akuy Music</a
+                    >
+                </nav>
+            </nav>
+            <form class="mt-5">
+                <div class="mb-4">
+                    <label class="block text-lg font-bold mb-2" for="username"
+                        >Username</label
+                    >
+                    <input
+                        class="w-full p-3 border rounded-lg text-black"
+                        type="text"
+                        id="username"
+                        placeholder="Username"
+                    />
+                </div>
+
+                <div class="mb-4">
+                    <label class="block text-lg font-bold mb-2" for="password"
+                        >Password</label
+                    >
+                    <input
+                        class="w-full p-3 border rounded-lg text-black"
+                        type="password"
+                        id="password"
+                        placeholder="********"
+                    />
+                </div>
+
+                <div class="text-right mb-4">
+                    <a href="#" class="text-blue-500 text-sm">Quên mật khẩu?</a>
+                </div>
+
+                <button
+                    type="submit"
+                    class="w-full bg-blue-500 text-white py-3 rounded-lg font-bold text-lg hover:bg-blue-600 transition duration-200"
+                >
+                    Đăng nhập
+                </button>
+
+                <div class="text-center my-6 text-lg">Đăng nhập với</div>
+
+                <div class="flex justify-around mb-6">
+                    <label class="inline-flex items-center">
+                        <input
+                            type="radio"
+                            name="role"
+                            class="form-radio text-blue-500"
+                            value="user"
+                            checked
+                        />
+                        <span class="ml-2">User</span>
+                    </label>
+                    <label class="inline-flex items-center">
+                        <input
+                            type="radio"
+                            name="role"
+                            class="form-radio text-blue-500"
+                            value="admin"
+                        />
+                        <span class="ml-2">Admin</span>
+                    </label>
+                </div>
+
+                <div class="flex justify-center items-center">
+                    <p class="mr-2 text-lg">Bạn có tài khoản không?</p>
+                    <a href="#" class="text-blue-500 font-bold text-lg"
+                        >Đăng kí</a
+                    >
+                </div>
+            </form>
+        </div>
     </body>
 </html>
