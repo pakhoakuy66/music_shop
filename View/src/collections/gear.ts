@@ -17,3 +17,91 @@ document
             }
         }
     });
+
+// Định nghĩa kiểu dữ liệu cho sản phẩm
+interface Gears {
+    name: string;
+    price: number;
+    image: string;
+}
+
+// Dữ liệu mẫu từ cơ sở dữ liệu (thay thế bằng dữ liệu thực tế)
+const gear: Gears[] = [
+    //Lưu mốt sửa chỗ này lại
+    {
+        name: "Nova Go SP1 AcousticPlus 2.0 - Black",
+        price: 5490000,
+        image: "../../public/IMG/Capo_01.png",
+    },
+    {
+        name: "X4 Pro EQ AcousticPlus",
+        price: 16990000,
+        image: "https://via.placeholder.com/150",
+    },
+    {
+        name: "Nova Go Sonic - Black",
+        price: 7490000,
+        image: "https://via.placeholder.com/150",
+    },
+    {
+        name: "Nova Go SP1 AcousticPlus 2.0 - White",
+        price: 5490000,
+        image: "https://via.placeholder.com/150",
+    },
+];
+
+const gearGrid = document.getElementById("product-grid") as HTMLDivElement;
+const gearCount = document.getElementById("product-count") as HTMLDivElement;
+const gearsortOptions = document.getElementById(
+    "sort-options"
+) as HTMLSelectElement;
+
+// Hàm hiển thị sản phẩm
+function displayProductsGears(gear: Gears[]) {
+    gearGrid.innerHTML = "";
+    gear.forEach((product) => {
+        const productGuitars = document.createElement("div");
+        productGuitars.classList.add(
+            "bg-white",
+            "p-6",
+            "rounded-lg",
+            "shadow-lg",
+            "hover:shadow-xl",
+            "transition-shadow",
+            "duration-1000"
+        );
+        productGuitars.innerHTML = `
+            <img class="w-full h-64 object-cover mb-4" src="${
+                product.image
+            }" alt="${product.name}">
+            <h2 class="text-xl font-bold mb-2">${product.name}</h2>
+            <p class="text-gray-700">${product.price.toLocaleString("vi-VN", {
+                style: "currency",
+                currency: "VND",
+            })}</p>
+        `;
+        gearGrid.appendChild(productGuitars);
+    });
+    // Cập nhật số lượng sản phẩm
+    gearCount.textContent = `${gear.length} Sản Phẩm`;
+}
+
+// Hàm sắp xếp sản phẩm
+function sortProductsGears(sortOption: string) {
+    if (sortOption === "price-asc") {
+        gear.sort((a, b) => a.price - b.price);
+    } else if (sortOption === "price-desc") {
+        gear.sort((a, b) => b.price - a.price);
+    }
+    // Hiển thị lại các sản phẩm đã được sắp xếp
+    displayProductsGears(gear);
+}
+
+// Hiển thị sản phẩm ban đầu
+displayProductsGears(gear);
+
+// Lắng nghe sự kiện thay đổi cho tùy chọn sắp xếp
+gearsortOptions.addEventListener("change", (event) => {
+    const target = event.target as HTMLSelectElement;
+    sortProductsGears(target.value);
+});

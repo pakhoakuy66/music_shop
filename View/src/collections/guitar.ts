@@ -17,3 +17,91 @@ document
             }
         }
     });
+
+// Định nghĩa kiểu dữ liệu cho sản phẩm
+interface Guitars {
+    name: string;
+    price: number;
+    image: string;
+}
+
+// Dữ liệu mẫu từ cơ sở dữ liệu (thay thế bằng dữ liệu thực tế)
+const guitars: Guitars[] = [
+    //Lưu mốt sửa chỗ này lại
+    {
+        name: "Nova Go SP1 AcousticPlus 2.0 - Black",
+        price: 5490000,
+        image: "../../public/IMG/guitar_VT.jpg",
+    },
+    {
+        name: "X4 Pro EQ AcousticPlus",
+        price: 16990000,
+        image: "https://via.placeholder.com/150",
+    },
+    {
+        name: "Nova Go Sonic - Black",
+        price: 7490000,
+        image: "https://via.placeholder.com/150",
+    },
+    {
+        name: "Nova Go SP1 AcousticPlus 2.0 - White",
+        price: 5490000,
+        image: "https://via.placeholder.com/150",
+    },
+];
+
+const guitarGrid = document.getElementById("product-grid") as HTMLDivElement;
+const guitarCount = document.getElementById("product-count") as HTMLDivElement;
+const guitarsortOptions = document.getElementById(
+    "sort-options"
+) as HTMLSelectElement;
+
+// Hàm hiển thị sản phẩm
+function displayProductsGuitars(guitars: Guitars[]) {
+    guitarGrid.innerHTML = "";
+    guitars.forEach((product) => {
+        const productGuitars = document.createElement("div");
+        productGuitars.classList.add(
+            "bg-white",
+            "p-6",
+            "rounded-lg",
+            "shadow-lg",
+            "hover:shadow-xl",
+            "transition-shadow",
+            "duration-1000"
+        );
+        productGuitars.innerHTML = `
+            <img class="w-full h-64 object-cover mb-4" src="${
+                product.image
+            }" alt="${product.name}">
+            <h2 class="text-xl font-bold mb-2">${product.name}</h2>
+            <p class="text-gray-700">${product.price.toLocaleString("vi-VN", {
+                style: "currency",
+                currency: "VND",
+            })}</p>
+        `;
+        guitarGrid.appendChild(productGuitars);
+    });
+    // Cập nhật số lượng sản phẩm
+    guitarCount.textContent = `${guitars.length} Sản Phẩm`;
+}
+
+// Hàm sắp xếp sản phẩm
+function sortProductsGuitars(sortOption: string) {
+    if (sortOption === "price-asc") {
+        guitars.sort((a, b) => a.price - b.price);
+    } else if (sortOption === "price-desc") {
+        guitars.sort((a, b) => b.price - a.price);
+    }
+    // Hiển thị lại các sản phẩm đã được sắp xếp
+    displayProductsGuitars(guitars);
+}
+
+// Hiển thị sản phẩm ban đầu
+displayProductsGuitars(guitars);
+
+// Lắng nghe sự kiện thay đổi cho tùy chọn sắp xếp
+guitarsortOptions.addEventListener("change", (event) => {
+    const target = event.target as HTMLSelectElement;
+    sortProductsGuitars(target.value);
+});
