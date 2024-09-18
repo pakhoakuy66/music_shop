@@ -67,12 +67,14 @@ function displayProductsManaUkuleles(manaUkuleles: Ukuleles[]) {
         const productUkuleles = document.createElement("div");
         productUkuleles.classList.add(
             "bg-white",
-            "p-6",
+            "p-7",
             "rounded-lg",
-            "shadow-lg",
-            "hover:shadow-xl",
-            "transition-shadow",
-            "duration-1000"
+            "duration-200",
+            "cursor-pointer",
+            "hover:shadow-lg", // Thêm hiệu ứng bóng khi rê chuột vào
+            "hover:scale-105", // Thêm hiệu ứng phóng to khi rê chuột vào
+            "transform",
+            "transition-transform"
         );
         productUkuleles.innerHTML = `
                 <img class="w-full h-64 object-cover mb-4" src="${

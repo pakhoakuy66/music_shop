@@ -66,9 +66,12 @@ function displayProductsKalimba(kalimba: Kalimbas[]) {
             "p-6",
             "rounded-lg",
             "shadow-lg",
-            "hover:shadow-xl",
-            "transition-shadow",
-            "duration-1000"
+            "cursor-pointer",
+            "duration-200",
+            "hover:shadow-lg", // Thêm hiệu ứng bóng khi rê chuột vào
+            "hover:scale-105", // Thêm hiệu ứng phóng to khi rê chuột vào
+            "transform",
+            "transition-transform"
         );
         productUkuleles.innerHTML = `
                 <img class="w-full h-64 object-cover mb-4" src="${

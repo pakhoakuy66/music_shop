@@ -9,7 +9,7 @@ document
         if (searchInput) {
             if (searchInput.classList.contains("hidden")) {
                 searchInput.classList.remove("hidden");
-                searchInput.classList.add("block"); // Sử dụng 'block' thay vì 'visible' nếu dùng Tailwind CSS
+                searchInput.classList.add("block");
                 searchInput.focus();
             } else {
                 searchInput.classList.remove("block");
@@ -27,7 +27,6 @@ interface Guitars {
 
 // Dữ liệu mẫu từ cơ sở dữ liệu (thay thế bằng dữ liệu thực tế)
 const managmentGuitars: Guitars[] = [
-    //Lưu mốt sửa chỗ này lại
     {
         name: "Nova Go SP1 AcousticPlus 2.0 - Black",
         price: 5490000,
@@ -44,68 +43,82 @@ const managmentGuitars: Guitars[] = [
         image: "https://via.placeholder.com/150",
     },
     {
-        name: "Nova Go SP1 AcousticPlus 2.0 - White",
-        price: 5490000,
+        name: "Blue EQ AcousticPlus 2.0 - Red",
+        price: 12990000,
+        image: "https://via.placeholder.com/150",
+    },
+    {
+        name: "X4 Pro EQ AcousticPlus - Blue",
+        price: 18990000,
         image: "https://via.placeholder.com/150",
     },
 ];
 
-const manaGuitarGrid = document.getElementById(
-    "product-grid"
-) as HTMLDivElement;
-const manaGuitarCount = document.getElementById(
-    "product-count"
-) as HTMLDivElement;
-const manaGuitarsortOptions = document.getElementById(
-    "sort-options"
-) as HTMLSelectElement;
-
 // Hàm hiển thị sản phẩm
-function displayProductsManaGuitars(managmentGuitars: Guitars[]) {
-    manaGuitarGrid.innerHTML = "";
-    managmentGuitars.forEach((product) => {
-        const productGuitars = document.createElement("div");
-        productGuitars.classList.add(
+function displayProducts(products: Guitars[]): void {
+    const productGrid = document.getElementById("product-grid");
+
+    if (!productGrid) return;
+
+    // Làm sạch nội dung hiện tại của productGrid
+    productGrid.innerHTML = "";
+
+    products.forEach((product) => {
+        const productElement = document.createElement("div");
+        productElement.classList.add(
+            "border",
+            "border-gray-300",
+            "rounded",
+            "p-7",
             "bg-white",
-            "p-6",
-            "rounded-lg",
-            "shadow-lg",
-            "hover:shadow-xl",
-            "transition-shadow",
-            "duration-1000"
+            "cursor-pointer",
+            "duration-200",
+            "hover:shadow-lg",
+            "hover:scale-105", // Thêm lớp phóng to khi rê chuột vào
+            "transform",
+            "transition-transform"
         );
-        productGuitars.innerHTML = `
-            <img class="w-full h-64 object-cover mb-4" src="${
-                product.image
-            }" alt="${product.name}">
-            <h2 class="text-xl font-bold mb-2">${product.name}</h2>
-            <p class="text-gray-700">${product.price.toLocaleString("vi-VN", {
-                style: "currency",
-                currency: "VND",
-            })}</p>
+
+        productElement.innerHTML = `
+        <img src="${product.image}" alt="${
+            product.name
+        }" class="w-full h-48 object-cover mb-4" />
+        <h3 class="text-lg font-semibold mb-2">${product.name}</h3>
+        <p class="text-gray-600">${product.price.toLocaleString("vi-VN", {
+            style: "currency",
+            currency: "VND",
+        })}</p>
         `;
-        manaGuitarGrid.appendChild(productGuitars);
+
+        productGrid.appendChild(productElement);
     });
+
     // Cập nhật số lượng sản phẩm
-    manaGuitarCount.textContent = `${managmentGuitars.length} Sản Phẩm`;
-}
-
-// Hàm sắp xếp sản phẩm
-function sortProductsManaGuitars(sortOption: string) {
-    if (sortOption === "price-asc") {
-        managmentGuitars.sort((a, b) => a.price - b.price);
-    } else if (sortOption === "price-desc") {
-        managmentGuitars.sort((a, b) => b.price - a.price);
+    const productCount = document.getElementById("product-count");
+    if (productCount) {
+        productCount.textContent = `${products.length} Sản Phẩm`;
     }
-    // Hiển thị lại các sản phẩm đã được sắp xếp
-    displayProductsManaGuitars(managmentGuitars);
 }
 
-// Hiển thị sản phẩm ban đầu
-displayProductsManaGuitars(managmentGuitars);
+// Hiển thị tất cả sản phẩm khi trang được tải
+displayProducts(managmentGuitars);
 
-// Lắng nghe sự kiện thay đổi cho tùy chọn sắp xếp
-manaGuitarsortOptions.addEventListener("change", (event) => {
-    const target = event.target as HTMLSelectElement;
-    sortProductsManaGuitars(target.value);
-});
+// Lắng nghe sự kiện thay đổi trên dropdown sắp xếp
+const sortOptions = document.getElementById("sort-options");
+if (sortOptions) {
+    sortOptions.addEventListener("change", (e: Event) => {
+        const target = e.target as HTMLSelectElement;
+        const sortValue = target.value;
+
+        // Sao chép danh sách sản phẩm để không làm thay đổi dữ liệu gốc
+        const sortedProducts = [...managmentGuitars];
+
+        if (sortValue === "price-asc") {
+            sortedProducts.sort((a, b) => a.price - b.price);
+        } else if (sortValue === "price-desc") {
+            sortedProducts.sort((a, b) => b.price - a.price);
+        }
+
+        displayProducts(sortedProducts);
+    });
+}
