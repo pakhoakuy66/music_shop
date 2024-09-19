@@ -1,50 +1,29 @@
-import express, { Request, Response } from "express";
-const { MongoClient } = require("mongodb");
+import express from "express";
+import cors from "cors";
+import { DBConnect } from "../src/db/setup";
+import { userRoute } from "./src/routes/userRoute";
+import { adminRoute } from "./src/routes/adminRoute";
 
 const app = express();
 const port = 3000;
 
-// Cập nhật địa chỉ kết nối đến MongoDB
-const url = "mongodb://127.0.0.1:27017/";
-const client = new MongoClient(url);
-const dbName = "Akuy66";
-const collectionName = "Akuy";
-
 // Middleware
-const bodyParser = require("body-parser");
+app.use(cors({ origin: "*" }));
 app.use(express.static("public"));
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
 app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 
-// Kết nối tới MongoDB và thiết lập route
-async function main() {
+// Routes
+app.use("/users", userRoute);
+app.use("/admins", adminRoute);
+
+// Kết nối tới MongoDB và khởi động server
+app.listen(port, async () => {
     try {
-        // Kết nối tới MongoDB
-        await client.connect();
-        console.log("Kết nối thành công đến MongoDB!");
-
-        const db = client.db(dbName);
-        const collection = db.collection(collectionName);
-
-        // Route để lấy dữ liệu từ MongoDB và hiển thị trên localhost
-        app.get("/", async (req: Request, res: Response) => {
-            try {
-                const data = await collection.find({}).toArray(); // Tìm tất cả các tài liệu trong collection
-                res.json(data); // Gửi dữ liệu dưới dạng JSON
-            } catch (err) {
-                console.error("Lỗi khi đọc dữ liệu từ MongoDB:", err);
-                res.status(500).send("Lỗi server");
-            }
-        });
-
-        app.listen(port, () =>
-            console.log(`App đang chạy tại http://localhost:${port}`)
-        );
+        await DBConnect();
+        console.log(`Listening at http://localhost:${port}`);
     } catch (err) {
-        console.error("Lỗi khi kết nối tới MongoDB:", err);
+        console.error("An error occurred when connecting to the database", err);
+        process.exit(1);
     }
-}
-
-// Gọi hàm main để chạy ứng dụng
-main().catch(console.error);
+});

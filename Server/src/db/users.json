@@ -1,0 +1,24 @@
+[
+    {
+        "id": "user0001",
+        "username": "user1",
+        "password": "password1",
+        "name": "Nguyen Van A",
+        "dateOfBirth": "1990-01-01",
+        "country": "Vietnam",
+        "hometown": "Hanoi",
+        "IDCard": "012345678",
+        "phoneNumber": "0987654321"
+    },
+    {
+        "id": "user0002",
+        "username": "user2",
+        "password": "password2",
+        "name": "Tran Thi B",
+        "dateOfBirth": "1992-02-02",
+        "country": "Vietnam",
+        "hometown": "Ho Chi Minh City",
+        "IDCard": "876543210",
+        "phoneNumber": "0123456789"
+    }
+]
