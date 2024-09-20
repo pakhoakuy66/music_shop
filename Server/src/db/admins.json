@@ -1,5 +1,6 @@
 [
     {
+      "id": "admin0001",
       "username": "admin1",
       "password": "adminpassword1",
       "name": "Le Van C",
@@ -7,9 +8,12 @@
       "country": "Vietnam",
       "hometown": "Da Nang",
       "IDCard": "234567890",
-      "phoneNumber": "0901234567"
+      "phoneNumber": "0901234567",
+      "email": "admin01@gmail.com",
+      "address": "ĐT601, Hoà Bắc, Hòa Vang, Đà Nẵng, Việt Nam"
     },
     {
+      "id": "admin0002",
       "username": "admin2",
       "password": "adminpassword2",
       "name": "Pham Thi D",
@@ -17,7 +21,9 @@
       "country": "Vietnam",
       "hometown": "Hai Phong",
       "IDCard": "345678901",
-      "phoneNumber": "0912345678"
+      "phoneNumber": "0912345678",
+      "email": "admin01@gmail.com",
+      "address": "Tô Hiệu, Trại Cau, Lê Chân, Hải Phòng 180000, Việt Nam"
     }
   ]
   
