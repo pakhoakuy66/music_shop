@@ -7,8 +7,10 @@
         "dateOfBirth": "1990-01-01",
         "country": "Vietnam",
         "hometown": "Hanoi",
-        "IDCard": "012345678",
-        "phoneNumber": "0987654321"
+        "IDCard": "01234567890",
+        "phoneNumber": "0987654321",
+        "email": "user1@example.com",
+        "address": "123 Nguyen Trai, Hanoi, Vietnam"
     },
     {
         "id": "user0002",
@@ -18,7 +20,9 @@
         "dateOfBirth": "1992-02-02",
         "country": "Vietnam",
         "hometown": "Ho Chi Minh City",
-        "IDCard": "876543210",
-        "phoneNumber": "0123456789"
+        "IDCard": "98765432100",
+        "phoneNumber": "0123456789",
+        "email": "user2@example.com",
+        "address": "456 Le Loi, Ho Chi Minh City, Vietnam"
     }
 ]
