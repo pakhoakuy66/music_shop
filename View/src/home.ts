@@ -62,3 +62,10 @@ document
             }
         }
     });
+
+document.querySelector(".open-menu")?.addEventListener("click", function () {
+    const mainMenu = document.querySelector(".main-menu");
+    if (mainMenu) {
+        mainMenu.classList.toggle("hidden"); // Đổi trạng thái hiển thị menu
+    }
+});
