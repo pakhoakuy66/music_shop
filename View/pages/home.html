@@ -47,19 +47,23 @@
             }
         </style>
     </head>
-    <body class="font-mono bg-[#BBB5AC]">
+    <body class="font-mono bg-[#BBB5AC] max-md:w-full max-md:h-full">
         <header class="h-20 p-2.5 bg-[#130C0E] flex items-center shadow-xl">
-            <a href="../pages/home.html" class="ml-5"
+            <a href="../pages/home.html" class="ml-5 max-md:mr-3"
                 ><img
-                    class="h-14 w-14"
+                    class="h-14 w-14 max-md:h-14 max-md:w-14"
                     src="../public/IMG/Akuy_logo.png"
                     alt=""
             /></a>
-            <a href="../pages/home.html" class="text-[32px] text-[#fff] ml-3"
+            <a
+                href="../pages/home.html"
+                class="text-[32px] text-[#fff] ml-3 max-md:text-[20px] max-md:ml-1"
                 >AKUY MUSIC</a
             >
             <div>
-                <ul class="flex ml-[100px] text-[18px] text-[#fff] font-bold">
+                <ul
+                    class="flex ml-[100px] text-[18px] text-[#fff] font-bold max-md:hidden max-md:ml-0"
+                >
                     <li class="mx-7 duration-200 hover:text-red-400">
                         <a href="./collections/guitar.html">GUITAR</a>
                     </li>
@@ -75,7 +79,7 @@
                 </ul>
             </div>
             <nav>
-                <ul class="flex ml-48 text-[#fff]">
+                <ul class="flex ml-48 text-[#fff] max-md:ml-60">
                     <li class="mx-5 relative">
                         <input
                             id="search-input"
@@ -89,14 +93,14 @@
                             ></i
                         ></a>
                     </li>
-                    <li class="mx-5">
+                    <li class="mx-5 max-md:hidden">
                         <a href="./login.html"
                             ><i
                                 class="duration-200 hover:text-red-400 hover:text-[20px] fa-regular fa-user"
                             ></i
                         ></a>
                     </li>
-                    <li class="mx-5">
+                    <li class="mx-5 max-md:hidden">
                         <a href=""
                             ><i
                                 class="duration-200 hover:text-red-400 hover:text-[20px] fa-solid fa-cart-shopping"
