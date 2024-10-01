@@ -29,6 +29,12 @@
             #crow {
                 animation: crow 0.5s linear 0s infinite;
             }
+            @media (max-width: 768px) {
+                .open-menu {
+                    display: block;
+                }
+            }
+
             @keyframes typing {
                 from {
                     width: 0;
@@ -49,7 +55,7 @@
     </head>
     <body class="font-mono bg-[#BBB5AC]">
         <header class="h-20 p-2.5 bg-[#130C0E] flex items-center shadow-xl">
-            <a href="../pages/home.html" class="ml-5 max-md:ml-3"
+            <a href="../pages/home.html" class="ml-5 mx-auto max-md:ml-3"
                 ><img
                     class="h-14 w-14 max-md:h-14 max-md:w-14"
                     src="../public/IMG/Akuy_logo.png"
@@ -57,7 +63,7 @@
             /></a>
             <a
                 href="../pages/home.html"
-                class="text-[32px] text-[#fff] ml-3 max-md:text-[20px] max-md:ml-0"
+                class="text-[32px] text-[#fff] ml-3 max-md:hidden"
                 >AKUY MUSIC</a
             >
             <nav class="flex justify-between">
@@ -95,7 +101,7 @@
                 </ul>
             </nav>
             <nav>
-                <ul class="flex ml-48 text-[#fff] max-md:ml-72">
+                <ul class="flex ml-48 text-[#fff] max-md:float-right">
                     <li class="mx-5 relative">
                         <input
                             id="search-input"
@@ -126,15 +132,15 @@
                 </ul>
             </nav>
             <div
-                class="open-menu hidden text-white text-[2rem] m-[10px] cursor-pointer max-md:block"
+                class="open-menu hidden text-white text-[2rem] m-[10px] cursor-pointer"
             >
                 <i class="fa-solid fa-bars"></i>
             </div>
         </header>
         <main class="flex">
-            <section class="h-[500px] pt-20 pl-20">
+            <section class="h-[500px] pt-20 pl-20 max-md:p-12 max-md:h-full">
                 <div
-                    class="w-[500px] overflow-hidden relative rounded-2xl shadow-xl"
+                    class="w-[500px] overflow-hidden relative rounded-2xl shadow-xl max-md:w-full"
                 >
                     <div class="flex duration-1000 translate-x-0 list_item">
                         <img src="../public/IMG/guitar5.webp" class="" />
@@ -155,10 +161,10 @@
                     </div>
                 </div>
             </section>
-            <article class="float-right pt-28 pl-28">
+            <article class="float-right pt-28 pl-28 max-md:hidden">
                 <div
                     id="typing"
-                    class="text-white float-left font-bold text-[45px]"
+                    class="text-white float-left font-bold text-[45px] max-md:text-[28px]"
                 >
                     Akuy <span>xin chào bạn </span><br />
                     <span class="text-[20px] text-red-700"
@@ -173,12 +179,12 @@
             </article>
         </main>
         <nav class="pt-10 text-white justify-center flex font-bold">
-            <h1 class="text-[28px] text-[#130C0E]">
+            <h1 class="text-[28px] text-[#130C0E] max-md:text-[20px]">
                 Mỗi người đều là một nghệ sĩ
             </h1>
         </nav>
-        <div class="h-[150px] flex justify-center border-b border-gray-500">
-            <p class="w-[900px] text-gray-800 text-center">
+        <div class="h-[150px] flex justify-center border-b border-gray-500 max-md:px-8">
+            <p class="w-[900px] text-gray-800 text-center max-md:text-[16px]">
                 Với cam kết luôn mang lại sự mới mẻ, Akuy liên tục mở rộng sang
                 các lĩnh vực mới, đáp ứng nhu cầu không ngừng phát triển của thị
                 trường nhạc cụ. Hãy đồng hành cùng Akuy trên hành trình định
