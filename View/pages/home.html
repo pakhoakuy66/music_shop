@@ -33,6 +33,15 @@
                 .open-menu {
                     display: block;
                 }
+                .close-menu {
+                    display: block;
+                }
+                .fa-user {
+                    display: block;
+                }
+                .fa-cart-shopping {
+                    display: block;
+                }
             }
 
             @keyframes typing {
@@ -68,7 +77,7 @@
             >
             <nav class="flex justify-between">
                 <ul
-                    class="main-menu flex ml-[100px] text-[18px] text-[#fff] font-bold max-md:h-[100vh] max-md:fixed max-md:top-0 max-md:left-0 max-md:right-0 max-md:z-10 max-md:flex-col max-md:justify-center max-md:items-center max-md:bg-[#130C0E] max-md:transition max-md:duration-1000 max-md:ease-linear max-md:hidden"
+                    class="main-menu flex ml-[100px] text-[18px] text-[#fff] font-bold max-md:h-[100vh] max-md:fixed max-md:top-0 max-md:left-0 max-md:right-0 max-md:z-10 max-md:flex-col max-md:justify-around max-md:items-start max-md:pt-16 max-md:bg-[#130C0E] max-md:transition max-md:duration-1000 max-md:ease-linear max-md:hidden"
                 >
                     <li class="mx-7 duration-200 hover:text-red-400">
                         <a href="./collections/guitar.html">GUITAR</a>
@@ -83,18 +92,18 @@
                         <a href="./collections/gear.html">GEAR</a>
                     </li>
                     <div
-                        class="close-menu text-[2rem] hidden m-[20px] cursor-pointer max-md:block max-md:absolute max-md:top-[20px] max-md:right-[20px]"
+                        class="close-menu text-[2rem] hidden m-[10px] cursor-pointer max-md:absolute max-md:top-[20px] max-md:right-[20px]"
                     >
                         <i class="fa-solid fa-times"></i>
                     </div>
-                    <span class="icons max-md:inline-block max-md:p-[20px]"
-                        ><a href=""
+                    <span class="icons max-md:p-[20px] max-md:flex"
+                        ><a href="./login.html"
                             ><i
-                                class="duration-200 hover:text-red-400 hover:text-[20px] text-[2rem] hidden m-[20px] cursor-pointer fa-regular fa-user"
+                                class="duration-200 hover:text-red-400 hover:text-[20px] text-[2rem] hidden max-md:text-[19px] m-[20px] cursor-pointer fa-regular fa-user"
                             ></i></a
                         ><a href=""
                             ><i
-                                class="duration-200 hover:text-red-400 hover:text-[20px] text-[2rem] hidden m-[20px] cursor-pointer fa-solid fa-cart-shopping"
+                                class="duration-200 hover:text-red-400 hover:text-[20px] text-[2rem] hidden max-md:text-[19px] m-[20px] cursor-pointer fa-solid fa-cart-shopping"
                             ></i
                         ></a>
                     </span>
@@ -149,12 +158,12 @@
                     </div>
                     <div class="btns">
                         <div
-                            class="text-[25px] text-[#999] absolute top-[40%] translate-y-[50%] left-2 cursor-pointer duration-200 hover:text-[#fff] hover:text-[27px] btn_left btn"
+                            class="text-[25px] text-[#999] absolute top-[40%] translate-y-[50%] left-2 cursor-pointer duration-200 hover:text-[#fff] hover:text-[27px] max-md:text-[20px] max-md:hover:text-[21px] btn_left btn"
                         >
                             <i class="fa-solid fa-chevron-left"></i>
                         </div>
                         <div
-                            class="text-[25px] text-[#999] absolute top-[40%] translate-y-[50%] right-2 cursor-pointer duration-200 hover:text-[#fff] hover:text-[27px] btn_right btn"
+                            class="text-[25px] text-[#999] absolute top-[40%] translate-y-[50%] right-2 cursor-pointer duration-200 hover:text-[#fff] hover:text-[27px] max-md:text-[20px] max-md:hover:text-[21px] btn_right btn"
                         >
                             <i class="fa-solid fa-chevron-right"></i>
                         </div>
@@ -183,7 +192,9 @@
                 Mỗi người đều là một nghệ sĩ
             </h1>
         </nav>
-        <div class="h-[150px] flex justify-center border-b border-gray-500 max-md:px-8">
+        <div
+            class="h-[150px] flex justify-center border-b border-gray-500 max-md:px-8 max-md:h-[200px]"
+        >
             <p class="w-[900px] text-gray-800 text-center max-md:text-[16px]">
                 Với cam kết luôn mang lại sự mới mẻ, Akuy liên tục mở rộng sang
                 các lĩnh vực mới, đáp ứng nhu cầu không ngừng phát triển của thị
@@ -193,85 +204,117 @@
             </p>
         </div>
         <section
-            class="h-[800px] flex justify-around pt-32 border-b border-gray-500"
+            class="h-[800px] flex justify-around pt-32 border-b border-gray-500 max-md:h-[600px]"
         >
             <div>
                 <a href="./collections/guitar.html"
                     ><img
-                        class="h-[500px] w-[350px] object-cover image-rendering-crisp duration-200 hover:h-[520px] hover:w-[370px]"
+                        class="h-[500px] w-[350px] object-cover image-rendering-crisp duration-200 hover:h-[520px] hover:w-[370px] max-md:h-[300px] max-md:w-[150px] max-md:hover:h-[320px] max-md:hover:w-[170px]"
                         src="../public/IMG/guitar_VT_RM.png"
                         alt=""
                 /></a>
                 <a
-                    class="flex justify-center mx-28 mt-5 font-bold rounded-xl duration-200 hover:text-[#fff] hover:bg-[#130C0E]"
-                    href=""
+                    class="flex justify-center mx-28 mt-5 font-bold rounded-xl duration-200 hover:text-[#fff] hover:bg-[#130C0E] max-md:mx-5"
+                    href="./collections/guitar.html"
                     >Đàn Guitar →</a
                 >
             </div>
             <div>
                 <a href="./collections/ukulele.html"
                     ><img
-                        class="h-[500px] w-[350px] object-cover image-rendering-crisp duration-200 hover:h-[520px] hover:w-[370px]"
+                        class="h-[500px] w-[350px] object-cover image-rendering-crisp duration-200 hover:h-[520px] hover:w-[370px] max-md:h-[300px] max-md:w-[150px] max-md:hover:h-[320px] max-md:hover:w-[170px]"
                         src="../public/IMG/uku_VT_RM.png"
                         alt=""
                 /></a>
                 <a
-                    class="flex justify-center mt-5 font-bold rounded-xl mx-28 hover:bg-[#130C0E] duration-200 hover:text-[#fff]"
-                    href=""
+                    class="flex justify-center mt-5 font-bold rounded-xl mx-28 hover:bg-[#130C0E] duration-200 hover:text-[#fff] max-md:mx-5"
+                    href="./collections/ukulele.html"
                     >Đàn Ukulele →</a
                 >
             </div>
         </section>
-        <aside class="h-[330px]">
-            <div class="pt-16">
-                <ul class="flex justify-around">
-                    <li class="w-64 bg-[#c4bfb4] p-3 rounded-md text-gray-800">
-                        <h2 class="text-[#130C0E] font-bold text-[20px]">
+        <aside class="h-[330px] max-md:h-[505px] max-md:p-5">
+            <div class="pt-16 text-center">
+                <ul
+                    class="flex justify-around max-md:grid max-md:gap-4 max-md:grid-cols-2"
+                >
+                    <li
+                        class="w-64 bg-[#c4bfb4] p-3 rounded-md text-gray-800 max-md:m-1 max-md:text-[2.5vw] max-md:w-[40vw]"
+                    >
+                        <h2
+                            class="text-[#130C0E] font-bold text-[20px] max-md:text-[3vw]"
+                        >
                             ĐẢM BẢO CHẤT LƯỢNG
                         </h2>
-                        Mua hàng một cách yên tâm. Chúng tôi luôn kiểm tra và
-                        đóng gói cẩn thận trước khi giao hàng. Bạn được quyền
-                        kiểm tra khi nhận hàng.
+                        <p class="max-md:text-[2.5vw]">
+                            Mua hàng một cách yên tâm. Chúng tôi luôn kiểm tra
+                            và đóng gói cẩn thận trước khi giao hàng. Bạn được
+                            quyền kiểm tra khi nhận hàng.
+                        </p>
                     </li>
-                    <li class="w-64 bg-[#c4bfb4] p-3 rounded-md text-gray-800">
-                        <h2 class="text-[#130C0E] font-bold text-[20px]">
+                    <li
+                        class="w-64 bg-[#c4bfb4] p-3 rounded-md text-gray-800 max-md:m-1 max-md:text-[2.5vw] max-md:w-[40vw]"
+                    >
+                        <h2
+                            class="text-[#130C0E] font-bold text-[20px] max-md:text-[3vw]"
+                        >
                             THANH TOÁN DỄ DÀNG
                         </h2>
-                        Các tùy chọn thanh toán phổ biến như: Tiền mặt, chuyển
-                        khoản, quét thẻ, ví điện tử… giúp bạn thanh toán một
-                        cách dễ dàng. Chương trình trả góp lên tới 12 tháng.
+                        <p class="max-md:text-[2.5vw]">
+                            Các tùy chọn thanh toán phổ biến như: Tiền mặt,
+                            chuyển khoản, quét thẻ, ví điện tử… giúp bạn thanh
+                            toán một cách dễ dàng. Chương trình trả góp lên tới
+                            12 tháng.
+                        </p>
                     </li>
-                    <li class="w-64 bg-[#c4bfb4] p-3 rounded-md text-gray-800">
-                        <h2 class="text-[#130C0E] font-bold text-[20px]">
+                    <li
+                        class="w-64 bg-[#c4bfb4] p-3 rounded-md text-gray-800 max-md:m-1 max-md:text-[2.5vw] max-md:w-[40vw]"
+                    >
+                        <h2
+                            class="text-[#130C0E] font-bold text-[20px] max-md:text-[3vw]"
+                        >
                             BẢO HÀNH LÂU DÀI
                         </h2>
-                        Bảo hành chính hãng 12 tháng. Đổi mới trong 1 tuần đầu
-                        tiên nếu có lỗi. Đảm bảo bạn hài lòng với giao dịch mua
-                        hàng của mình.
+                        <p class="max-md:text-[2.5vw]">
+                            Bảo hành chính hãng 12 tháng. Đổi mới trong 1 tuần
+                            đầu tiên nếu có lỗi. Đảm bảo bạn hài lòng với giao
+                            dịch mua hàng của mình.
+                        </p>
                     </li>
-                    <li class="w-64 bg-[#c4bfb4] p-3 rounded-md text-gray-800">
-                        <h2 class="text-[#130C0E] font-bold text-[20px]">
+                    <li
+                        class="w-64 bg-[#c4bfb4] p-3 rounded-md text-gray-800 max-md:m-1 max-md:text-[2.5vw] max-md:w-[40vw]"
+                    >
+                        <h2
+                            class="text-[#130C0E] font-bold text-[20px] max-md:text-[3vw]"
+                        >
                             GIAO HÀNG TẬN NHÀ
                         </h2>
-                        Giao hàng tận nhà trên toàn quốc. TP.HCM và các khu vực
-                        lân cận: Giao hàng trong 2 giờ. Các tỉnh thành khác:
-                        Thời gian giao hàng từ 01 đến 03 ngày.
+                        <p class="max-md:text-[2.5vw]">
+                            Giao hàng tận nhà trên toàn quốc. TP.HCM và các khu
+                            vực lân cận: Giao hàng trong 2 giờ. Các tỉnh thành
+                            khác: Thời gian giao hàng từ 01 đến 03 ngày.
+                        </p>
                     </li>
                 </ul>
             </div>
         </aside>
-        <nav class="h-48 bg-[#130C0E] p-2 border-gray-500 border-b">
-            <h1 class="font-bold flex justify-center text-white text-[22px]">
+
+        <footer class="h-48 bg-[#130C0E] p-2 border-gray-500 border-b">
+            <h1
+                class="font-bold flex justify-center text-white text-[22px] max-md:text-[18px]"
+            >
                 Hãy vững bước theo đam mê của mình
             </h1>
-            <h3 class="flex justify-center text-white text-[22px]">
+            <h3
+                class="flex justify-center text-white text-[22px] max-md:text-[18px] max-md:text-center"
+            >
                 Akuy Tin rằng với sự đam mê và nỗ lực, bạn chắc chắn sẽ đạt được
                 thành công
             </h3>
-            <div class="w-80 pt-7 ml-[450px]">
-                <ul class="flex justify-around">
+            <div class="flex justify-center pt-7">
+                <ul class="flex justify-around w-80">
                     <li
-                        class="text-[40px] text-white duration-200 hover:text-gray-300 hover:text-[41px]"
+                        class="text-[40px] text-white duration-200 hover:text-gray-300 hover:text-[41px] max-md:text-[30px] max-md:hover:text-[31px]"
                     >
                         <a
                             href="https://www.facebook.com/profile.php?id=100026007228375"
@@ -279,12 +322,12 @@
                         ></a>
                     </li>
                     <li
-                        class="text-[40px] text-white duration-200 hover:text-gray-300 hover:text-[41px]"
+                        class="text-[40px] text-white duration-200 hover:text-gray-300 hover:text-[41px] max-md:text-[30px] max-md:hover:text-[31px]"
                     >
                         <a href=""><i class="fa-brands fa-tiktok"></i></a>
                     </li>
                     <li
-                        class="text-[40px] text-white duration-200 hover:text-gray-300 hover:text-[41px]"
+                        class="text-[40px] text-white duration-200 hover:text-gray-300 hover:text-[41px] max-md:text-[30px] max-md:hover:text-[31px]"
                     >
                         <a href="https://www.instagram.com/akuy.66/"
                             ><i class="fa-brands fa-instagram"></i
@@ -292,9 +335,13 @@
                     </li>
                 </ul>
             </div>
-        </nav>
-        <footer class="h-10 bg-[#130C0E] p-2">
-            <ul class="flex justify-around text-gray-500 items-center">
+        </footer>
+        <footer
+            class="h-10 bg-[#130C0E] p-2 max-md:h-28 max-md:flex max-md:justify-center"
+        >
+            <ul
+                class="flex justify-around text-gray-500 items-center max-md:text-[13px] max-md:grid max-md:grid-cols-2 max-md:gap-y-2"
+            >
                 <li class="duration-200 hover:text-white hover:underline">
                     <a href="./policies/refund-policy.html"
                         >Chính sách hoàn tiền</a
