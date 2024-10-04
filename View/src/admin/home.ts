@@ -62,3 +62,27 @@ document
             }
         }
     });
+
+document.addEventListener("DOMContentLoaded", () => {
+    const mainMenu = document.querySelector(".main-menu") as HTMLElement | null;
+    const closeMenu = document.querySelector(
+        ".close-menu"
+    ) as HTMLElement | null;
+    const openMenu = document.querySelector(".open-menu") as HTMLElement | null;
+
+    openMenu?.addEventListener("click", show);
+    closeMenu?.addEventListener("click", close);
+
+    function show() {
+        if (mainMenu) {
+            mainMenu.style.display = "flex";
+            mainMenu.style.top = "0";
+        }
+    }
+
+    function close() {
+        if (mainMenu) {
+            mainMenu.style.top = "-100%";
+        }
+    }
+});

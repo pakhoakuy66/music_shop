@@ -29,6 +29,20 @@
             #crow {
                 animation: crow 0.5s linear 0s infinite;
             }
+            @media (max-width: 768px) {
+                .open-menu {
+                    display: block;
+                }
+                .close-menu {
+                    display: block;
+                }
+                .fa-user {
+                    display: block;
+                }
+                .fa-cart-shopping {
+                    display: block;
+                }
+            }
             @keyframes typing {
                 from {
                     width: 0;
@@ -49,17 +63,21 @@
     </head>
     <body class="font-mono bg-[#BBB5AC]">
         <header class="h-20 p-2.5 bg-[#130C0E] flex items-center shadow-xl">
-            <a href="./home.html" class="ml-5"
+            <a href="./home.html" class="ml-5 mx-auto max-md:ml-3"
                 ><img
-                    class="h-14 w-14"
+                    class="h-14 w-14 max-md:h-14 max-md:w-14"
                     src="../../public/IMG/Akuy_logo.png"
                     alt=""
             /></a>
-            <a href="./home.html" class="text-[32px] text-[#fff] ml-3"
+            <a
+                href="./home.html"
+                class="text-[32px] text-[#fff] ml-3 max-md:hidden"
                 >AKUY MUSIC</a
             >
             <div>
-                <ul class="flex ml-[100px] text-[18px] text-[#fff] font-bold">
+                <ul
+                    class="main-menu flex ml-[100px] text-[18px] text-[#fff] font-bold max-md:h-[100vh] max-md:fixed max-md:top-0 max-md:left-0 max-md:right-0 max-md:z-10 max-md:flex-col max-md:justify-around max-md:items-start max-md:pt-16 max-md:bg-[#130C0E] max-md:transition max-md:duration-1000 max-md:ease-linear max-md:hidden"
+                >
                     <li class="mx-7 duration-200 hover:text-red-400">
                         <a href="./managingCollections/managmentGuitar.html"
                             >GUITAR</a
@@ -80,6 +98,22 @@
                             >GEAR</a
                         >
                     </li>
+                    <div
+                        class="close-menu text-[2rem] hidden m-[10px] cursor-pointer max-md:absolute max-md:top-[20px] max-md:right-[20px]"
+                    >
+                        <i class="fa-solid fa-times"></i>
+                    </div>
+                    <span class="icons max-md:p-[20px] max-md:flex"
+                        ><a href="../login.html"
+                            ><i
+                                class="duration-200 hover:text-red-400 hover:text-[20px] text-[2rem] hidden max-md:text-[19px] m-[20px] cursor-pointer fa-regular fa-user"
+                            ></i></a
+                        ><a href=""
+                            ><i
+                                class="duration-200 hover:text-red-400 hover:text-[20px] text-[2rem] hidden max-md:text-[19px] m-[20px] cursor-pointer fa-solid fa-cart-shopping"
+                            ></i
+                        ></a>
+                    </span>
                 </ul>
             </div>
             <nav>
@@ -97,7 +131,7 @@
                             ></i
                         ></a>
                     </li>
-                    <li class="mx-5">
+                    <li class="mx-5 max-md:hidden">
                         <a href="../login.html"
                             ><i
                                 class="duration-200 hover:text-red-400 hover:text-[20px] fa-regular fa-user"
@@ -106,11 +140,16 @@
                     </li>
                 </ul>
             </nav>
+            <div
+                class="open-menu hidden text-white text-[2rem] m-[10px] cursor-pointer"
+            >
+                <i class="fa-solid fa-bars"></i>
+            </div>
         </header>
         <main class="flex">
-            <section class="h-[500px] pt-20 pl-20">
+            <section class="h-[500px] pt-20 pl-20 max-md:p-12 max-md:h-full">
                 <div
-                    class="w-[500px] overflow-hidden relative rounded-2xl shadow-xl"
+                    class="w-[500px] overflow-hidden relative rounded-2xl shadow-xl max-md:w-full"
                 >
                     <div class="flex duration-1000 translate-x-0 list_item">
                         <img src="../../public/IMG/guitar5.webp" class="" />
@@ -119,19 +158,19 @@
                     </div>
                     <div class="btns">
                         <div
-                            class="text-[25px] text-[#999] absolute top-[40%] translate-y-[50%] left-2 cursor-pointer duration-200 hover:text-[#fff] hover:text-[27px] btn_left btn"
+                            class="text-[25px] text-[#999] absolute top-[40%] translate-y-[50%] left-2 cursor-pointer duration-200 hover:text-[#fff] hover:text-[27px] max-md:text-[20px] max-md:hover:text-[21px] btn_left btn"
                         >
                             <i class="fa-solid fa-chevron-left"></i>
                         </div>
                         <div
-                            class="text-[25px] text-[#999] absolute top-[40%] translate-y-[50%] right-2 cursor-pointer duration-200 hover:text-[#fff] hover:text-[27px] btn_right btn"
+                            class="text-[25px] text-[#999] absolute top-[40%] translate-y-[50%] right-2 cursor-pointer duration-200 hover:text-[#fff] hover:text-[27px] max-md:text-[20px] max-md:hover:text-[21px] btn_right btn"
                         >
                             <i class="fa-solid fa-chevron-right"></i>
                         </div>
                     </div>
                 </div>
             </section>
-            <article class="float-right pt-28 pl-28">
+            <article class="float-right pt-28 pl-28 max-md:hidden">
                 <div
                     id="typing"
                     class="text-white float-left font-bold text-[45px]"
@@ -150,48 +189,52 @@
         </main>
 
         <section
-            class="h-[800px] flex justify-around pt-32 border-b border-gray-500"
+            class="h-[800px] flex justify-around pt-32 border-b border-gray-500 max-md:h-[600px] max-md:pt-24"
         >
             <div>
-                <a href=""
+                <a href="./managingCollections/managmentGuitar.html"
                     ><img
-                        class="h-[500px] w-[350px] object-cover image-rendering-crisp duration-200 hover:h-[520px] hover:w-[370px]"
+                        class="h-[500px] w-[350px] object-cover image-rendering-crisp duration-200 hover:h-[520px] hover:w-[370px] max-md:h-[300px] max-md:w-[150px] max-md:hover:h-[320px] max-md:hover:w-[170px]"
                         src="../../public/IMG/guitar_VT_RM.png"
                         alt=""
                 /></a>
                 <a
-                    class="flex justify-center mx-28 mt-5 font-bold rounded-xl duration-200 hover:text-[#fff] hover:bg-[#130C0E]"
-                    href=""
+                    class="flex justify-center mx-28 mt-5 font-bold rounded-xl duration-200 hover:text-[#fff] hover:bg-[#130C0E] max-md:mx-5"
+                    href="./managingCollections/managmentGuitar.html"
                     >Đàn Guitar →</a
                 >
             </div>
             <div>
-                <a href=""
+                <a href="./managingCollections/managmentUkulele.html"
                     ><img
-                        class="h-[500px] w-[350px] object-cover image-rendering-crisp duration-200 hover:h-[520px] hover:w-[370px]"
+                        class="h-[500px] w-[350px] object-cover image-rendering-crisp duration-200 hover:h-[520px] hover:w-[370px] v max-md:h-[300px] max-md:w-[150px] max-md:hover:h-[320px] max-md:hover:w-[170px]"
                         src="../../public/IMG/uku_VT_RM.png"
                         alt=""
                 /></a>
                 <a
-                    class="flex justify-center mt-5 font-bold rounded-xl mx-28 hover:bg-[#130C0E] duration-200 hover:text-[#fff]"
-                    href=""
+                    class="flex justify-center mt-5 font-bold rounded-xl mx-28 hover:bg-[#130C0E] duration-200 hover:text-[#fff] max-md:mx-5"
+                    href="./managingCollections/managmentUkulele.html"
                     >Đàn Ukulele →</a
                 >
             </div>
         </section>
 
-        <nav class="h-48 bg-[#130C0E] p-2 border-gray-500 border-b">
-            <h1 class="font-bold flex justify-center text-white text-[22px]">
+        <footer class="h-48 bg-[#130C0E] p-2 border-gray-500 border-b">
+            <h1
+                class="font-bold flex justify-center text-white text-[22px] max-md:text-[18px]"
+            >
                 Hãy vững bước theo đam mê của mình
             </h1>
-            <h3 class="flex justify-center text-white text-[22px]">
+            <h3
+                class="flex justify-center text-white text-[22px] max-md:text-[16px] max-md:text-center"
+            >
                 Akuy Tin rằng với sự đam mê và nỗ lực, bạn chắc chắn sẽ đạt được
                 thành công
             </h3>
-            <div class="w-80 pt-7 ml-[450px]">
-                <ul class="flex justify-around">
+            <div class="flex justify-center pt-7">
+                <ul class="flex justify-around w-80">
                     <li
-                        class="text-[40px] text-white duration-200 hover:text-gray-300 hover:text-[41px]"
+                        class="text-[40px] text-white duration-200 hover:text-gray-300 hover:text-[41px] max-md:text-[30px] max-md:hover:text-[31px]"
                     >
                         <a
                             href="https://www.facebook.com/profile.php?id=100026007228375"
@@ -199,12 +242,12 @@
                         ></a>
                     </li>
                     <li
-                        class="text-[40px] text-white duration-200 hover:text-gray-300 hover:text-[41px]"
+                        class="text-[40px] text-white duration-200 hover:text-gray-300 hover:text-[41px] max-md:text-[30px] max-md:hover:text-[31px]"
                     >
                         <a href=""><i class="fa-brands fa-tiktok"></i></a>
                     </li>
                     <li
-                        class="text-[40px] text-white duration-200 hover:text-gray-300 hover:text-[41px]"
+                        class="text-[40px] text-white duration-200 hover:text-gray-300 hover:text-[41px] max-md:text-[30px] max-md:hover:text-[31px]"
                     >
                         <a href="https://www.instagram.com/akuy.66/"
                             ><i class="fa-brands fa-instagram"></i
@@ -212,7 +255,7 @@
                     </li>
                 </ul>
             </div>
-        </nav>
+        </footer>
     </body>
     <script src="../../src/admin/home.ts" type="module"></script>
 </html>

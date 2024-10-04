@@ -18,21 +18,39 @@
             .visible {
                 display: block;
             }
+            @media (max-width: 768px) {
+                .open-menu {
+                    display: block;
+                }
+                .close-menu {
+                    display: block;
+                }
+                .fa-user {
+                    display: block;
+                }
+                .fa-cart-shopping {
+                    display: block;
+                }
+            }
         </style>
     </head>
     <body class="font-mono bg-[#BBB5AC]">
         <header class="h-20 p-2.5 bg-[#130C0E] flex items-center shadow-xl">
-            <a href="../home.html" class="ml-5"
+            <a href="../home.html" class="ml-5 mx-auto max-md:ml-3"
                 ><img
-                    class="h-14 w-14"
+                    class="h-14 w-14 max-md:h-14 max-md:w-14"
                     src="../../public/IMG/Akuy_logo.png"
                     alt=""
             /></a>
-            <a href="../home.html" class="text-[32px] text-[#fff] ml-3"
+            <a
+                href="../home.html"
+                class="text-[32px] text-[#fff] ml-3 max-md:hidden"
                 >AKUY MUSIC</a
             >
             <div>
-                <ul class="flex ml-[100px] text-[18px] text-[#fff] font-bold">
+                <ul
+                    class="main-menu flex ml-[100px] text-[18px] text-[#fff] font-bold max-md:h-[100vh] max-md:fixed max-md:top-0 max-md:left-0 max-md:right-0 max-md:z-10 max-md:flex-col max-md:justify-around max-md:items-start max-md:pt-16 max-md:bg-[#130C0E] max-md:transition max-md:duration-1000 max-md:ease-linear max-md:hidden"
+                >
                     <li class="mx-7 duration-200 hover:text-red-400">
                         <a href="../collections/guitar.html">GUITAR</a>
                     </li>
@@ -45,10 +63,26 @@
                     <li class="mx-7 duration-200 hover:text-red-400">
                         <a href="../collections/gear.html">GEAR</a>
                     </li>
+                    <div
+                        class="close-menu text-[2rem] hidden m-[10px] cursor-pointer max-md:absolute max-md:top-[20px] max-md:right-[20px]"
+                    >
+                        <i class="fa-solid fa-times"></i>
+                    </div>
+                    <span class="icons max-md:p-[20px] max-md:flex"
+                        ><a href="../login.html"
+                            ><i
+                                class="duration-200 hover:text-red-400 hover:text-[20px] text-[2rem] hidden max-md:text-[19px] m-[20px] cursor-pointer fa-regular fa-user"
+                            ></i></a
+                        ><a href=""
+                            ><i
+                                class="duration-200 hover:text-red-400 hover:text-[20px] text-[2rem] hidden max-md:text-[19px] m-[20px] cursor-pointer fa-solid fa-cart-shopping"
+                            ></i
+                        ></a>
+                    </span>
                 </ul>
             </div>
             <nav>
-                <ul class="flex ml-48 text-[#fff]">
+                <ul class="flex ml-48 text-[#fff] max-md:hidden">
                     <li class="mx-5 relative">
                         <input
                             id="search-input"
@@ -78,6 +112,11 @@
                     </li>
                 </ul>
             </nav>
+            <div
+                class="open-menu hidden text-white text-[2rem] m-[10px] cursor-pointer"
+            >
+                <i class="fa-solid fa-bars"></i>
+            </div>
         </header>
         <main class="p-16 flex justify-center">
             <div class="w-[600px]">
@@ -182,17 +221,21 @@
             </div>
         </main>
         <nav class="h-48 bg-[#130C0E] p-2 border-gray-500 border-b">
-            <h1 class="font-bold flex justify-center text-white text-[22px]">
+            <h1
+                class="font-bold flex justify-center text-white text-[22px] max-md:text-[18px]"
+            >
                 Hãy vững bước theo đam mê của mình
             </h1>
-            <h3 class="flex justify-center text-white text-[22px]">
+            <h3
+                class="flex justify-center text-white text-[22px] max-md:text-center max-md:text-[16px]"
+            >
                 Akuy Tin rằng với sự đam mê và nỗ lực, bạn chắc chắn sẽ đạt được
                 thành công
             </h3>
-            <div class="w-80 pt-7 ml-[450px]">
-                <ul class="flex justify-around">
+            <div class="flex justify-center pt-7">
+                <ul class="flex justify-around max-md:w-80">
                     <li
-                        class="text-[40px] text-white duration-200 hover:text-gray-300 hover:text-[41px]"
+                        class="text-[40px] text-white duration-200 hover:text-gray-300 hover:text-[41px] max-md:text-[30px] max-md:hover:text-[31px]"
                     >
                         <a
                             href="https://www.facebook.com/profile.php?id=100026007228375"
@@ -200,12 +243,12 @@
                         ></a>
                     </li>
                     <li
-                        class="text-[40px] text-white duration-200 hover:text-gray-300 hover:text-[41px]"
+                        class="text-[40px] text-white duration-200 hover:text-gray-300 hover:text-[41px] max-md:text-[30px] max-md:hover:text-[31px]"
                     >
                         <a href=""><i class="fa-brands fa-tiktok"></i></a>
                     </li>
                     <li
-                        class="text-[40px] text-white duration-200 hover:text-gray-300 hover:text-[41px]"
+                        class="text-[40px] text-white duration-200 hover:text-gray-300 hover:text-[41px] max-md:text-[30px] max-md:hover:text-[31px]"
                     >
                         <a href="https://www.instagram.com/akuy.66/"
                             ><i class="fa-brands fa-instagram"></i
@@ -214,8 +257,12 @@
                 </ul>
             </div>
         </nav>
-        <footer class="h-10 bg-[#130C0E] p-2">
-            <ul class="flex justify-around text-gray-500 items-center">
+        <footer
+            class="h-10 bg-[#130C0E] p-2 max-md:h-28 max-md:flex max-md:justify-center"
+        >
+            <ul
+                class="flex justify-around text-gray-500 items-center max-md:text-[13px] max-md:grid max-md:grid-cols-2 max-md:gap-y-2"
+            >
                 <li class="duration-200 hover:text-white hover:underline">
                     <a href="./refund-policy.html">Chính sách hoàn tiền</a>
                 </li>
